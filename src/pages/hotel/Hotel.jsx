@@ -15,6 +15,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/searchContext";
 import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../context/AuthContexxt";
+import Reserve from "../../components/Reserve/Reserve";
 
 const Hotel = () => {
   const navigate = useNavigate()
@@ -170,7 +171,7 @@ const Hotel = () => {
         <MailList />
         <Footer />
       </div>
-      {openModal}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
     </div>
   );
 };
